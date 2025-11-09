@@ -7,7 +7,6 @@ OSBD<-Online_Shopping_Behavior_Dataset
 OSBD
 obj=OSBD[,c("Age_Group","Average_Monthly_Spend (INR)","Payment_Method","Purchase_Frequency")]
 
-obj$Age_Group[is.na(obj$Age_Group)]=median(obj$Age_Group,na.rm=TRUE)
 table(obj$Age_Group)
 train_index=createDataPartition(obj$Age_Group,p=0.8,list=FALSE)
 train_data=obj[train_index, ]
